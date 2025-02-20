@@ -4,6 +4,7 @@ import ItemQuantitySelector from './ItemQuantitySelector'
 import AddItemButton from './AddItemButton'
 import { saveProduct } from '../utils/productManager'
 import { CartContext } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
 const CardDetailComponent = ({ product }) => {
@@ -34,6 +35,7 @@ const CardDetailComponent = ({ product }) => {
 
           <ItemQuantitySelector count={counter} setCount={setCounter} stock={product.stock} />
           <AddItemButton save={addProduct} />
+          <Link to={"#"} className='py-1 px-2 rounded-xl bg-green-900 text-white mt-2'>Finalizar Compra</Link>
         </div>
       </div>
 
