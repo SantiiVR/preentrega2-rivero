@@ -7,7 +7,7 @@ import { getProducts } from '../utils/productManager'
 export const CartContext=createContext()
 
 export const CartProvider = ({children}) => {
-    const [productList , setProductList] = useState(getProducts())
+    const [productList , setProductList] = useState(getProducts()||[])
       const [qty, setqty] = useState(0)
     useEffect(() => {
         
