@@ -2,7 +2,7 @@ import { Form, Formik, Field, ErrorMessage } from "formik";
 import React from "react";
 import * as Yup from "yup";
 
-const PurchaseForm = () => {
+const PurchaseForm = ({handleSubmit}) => {
   const initialValues = {
     email1: "",
     email2: "",
@@ -10,6 +10,7 @@ const PurchaseForm = () => {
     lastName: "",
     phone: "",
   };
+  
   const validationSchema = Yup.object().shape({
     email1: Yup.string()
       .email("El correo electrónico no es válido")
@@ -24,11 +25,6 @@ const PurchaseForm = () => {
     lastName: Yup.string().min(2).required("Apellido es obligatorio"),
     phone: Yup.string().min(6).required("Telefono es obligatorio"),
   });
-  async function handleSubmit(e) {
-    try {
-      alert("formulario enviado");
-    } catch (error) {}
-  }
   return (
     <Formik
       initialValues={initialValues}
@@ -103,9 +99,9 @@ const PurchaseForm = () => {
 
 <button
           type="submit"
-          className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+          className="w-full bg-blue-500 text-white p-3 rounded hover:bg-blue-600 mt-5"
         >
-          Enviar
+          Comprar
         </button>
         </div>
       </Form>

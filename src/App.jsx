@@ -5,6 +5,7 @@ import NavBar from './components/NavBar'
 import ItemDetailContainer from './pages/ItemDetailContainer'
 import { CartProvider } from './context/CartContext'
 import Checkout from "./pages/Checkout"
+import Brief from './pages/Brief'
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Route path='/categoria/:id' element={<ItemListContainer/>} />
       <Route path='/item/:id' element={<ItemDetailContainer/>} />
       <Route path='/checkout' element={<Checkout/>} />
+      <Route path='/brief/:id' element={<Brief/>} />
     </Routes>
       </CartProvider>
     </div>

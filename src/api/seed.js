@@ -1,4 +1,3 @@
-/*este archivo sirve para poblar de productos la base de datos de manera recursiva*/
 import { nanoid } from "nanoid";
 import { db } from "./fireBase";
 import { doc, setDoc } from "firebase/firestore";
