@@ -31,7 +31,7 @@ const CartWidget = () => {
           <span className='text-center text-blue-300'>TOTAL ${productList.reduce((acc,p) => {
             return acc+(p.qty*p.price)
           },0)} </span>
-          <Link to={"#"} className='py-1 px-2 rounded-xl bg-green-900 text-white mt-2'>Finalizar Compra</Link>
+          <Link to={"/checkout"} className='py-1 px-2 rounded-xl bg-green-900 text-white mt-2'>Finalizar Compra</Link>
         </div>
       </div>
       )}

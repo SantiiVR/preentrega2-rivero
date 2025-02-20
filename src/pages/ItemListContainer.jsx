@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProducts, getProductsByCategory } from '../utils/asyncProducts'
+import { getAllProducts, getProductsByCategory } from '../api/apiProducts'
 import CardGallery from '../components/CardGallery'
 
 const ItemListContainer = () => {
@@ -12,7 +12,7 @@ const ItemListContainer = () => {
     try { 
       if ( !id  ) {
 
-        setProducts(await getProducts()) 
+        setProducts(await getAllProducts()) 
       } else {
         setProducts (await getProductsByCategory(id) ) 
       }

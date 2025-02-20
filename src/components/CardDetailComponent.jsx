@@ -35,11 +35,8 @@ const CardDetailComponent = ({ product }) => {
 
           <ItemQuantitySelector count={counter} setCount={setCounter} stock={product.stock} />
           <AddItemButton save={addProduct} />
-          <Link to={"#"} className='py-1 px-2 rounded-xl bg-green-900 text-white mt-2'>Finalizar Compra</Link>
+          <Link to={"/checkout"} className='py-1 px-2 rounded-xl bg-green-900 text-white mt-2'>Finalizar Compra</Link>
         </div>
-      </div>
-
-      <div className="p-5">
       </div>
     </div>
   )
