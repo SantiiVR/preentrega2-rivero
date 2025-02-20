@@ -13,8 +13,12 @@ if (!productExist) {
 }
 
 }
-function getProducts(){
+export function getProducts(){
     const products= JSON.parse(localStorage.getItem(COLLECTION))
     if (!products) return []
     return products
+}
+
+export function deleteProducts() {
+    localStorage.removeItem(COLLECTION)
 }

@@ -1,7 +1,24 @@
-import React from 'react'
-import Counter from './Counter'
+import React, { useContext, useState } from 'react'
+import ItemQuantitySelector from './ItemQuantitySelector'
+import AddItemButton from './AddItemButton'
+import { saveProduct } from '../utils/productManager'
+import { CartContext } from '../context/CartContext'
+
 
 const CardDetailComponent = ({product}) => {
+  const [counter, setCounter]=useState(1)
+  const {productList , setProductList, setqty}=useContext(CartContext)
+  
+  const addProduct=() => {
+    const productSave={id:product.id, name:product.name, price:product.price, qty:counter}
+    saveProduct(productSave)
+    setProductList({...productList, productSave})
+    
+            
+            const total = productList.reduce((acc, product) => acc + product.qty, 0 );
+            setqty(total)
+
+  }
   return (
     <div className="w-9/10 my-10 mx-auto bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
       <div className='flex justify-around items-center'>
@@ -14,8 +31,8 @@ const CardDetailComponent = ({product}) => {
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Precio: ${product.price} </p>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Stock: {product.stock} unidades</p>
  
- <Counter/>
-
+<ItemQuantitySelector count={counter} setCount={setCounter} stock={product.stock}/>
+<AddItemButton save={addProduct} />
         </div>
       </div>
 

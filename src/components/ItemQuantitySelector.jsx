@@ -15,10 +15,6 @@ const ItemQuantitySelector = ({stock, count, setCount}) => {
     }
   };
 
-  const handleAddToCart = () => {
-    alert("Agregado " + count + " al carrito");
-  };
-
   return (
     <div className="flex flex-col items-center p-5 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
       <div className="flex items-center mb-4">

@@ -13,7 +13,7 @@ export async function getAllProducts(){
         res.forEach((doc) => {
             products.push(doc.data())
           });
-        console.log(products)
+
 
         return products
     } catch (error) {
@@ -29,7 +29,7 @@ export const getProductsByCategory = async (categoryId) => {
         res.forEach((doc) => {
             products.push(doc.data())
           });
-        console.log(products)
+        
 
         return products
     } catch (error) {
