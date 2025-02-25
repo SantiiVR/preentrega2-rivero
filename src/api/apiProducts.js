@@ -33,7 +33,7 @@ export const getProductsByCategory = async (categoryId) => {
 
         return products
     } catch (error) {
-        
+        console.error(error)
     }
 }
 
@@ -43,7 +43,7 @@ export const getProductsById = async (id) => {
         const product = await getDoc(docRef);
         return product.data()
     } catch (error) {
-        
+        console.error(error)
     }
 }
 
@@ -53,7 +53,7 @@ export const getOrderById = async (id) => {
         const order = await getDoc(docRef);
         return order.data()
     } catch (error) {
-        
+        console.error(error)
     }
 }
 
@@ -61,6 +61,5 @@ export const saveOrder = async (order) => {
     try {
         await setDoc(doc(db, "order" , order.id), order);
     } catch (error) {
-        console.log(error)
-    }
+        console.error(error)    }
 }

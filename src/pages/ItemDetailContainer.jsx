@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import CardDetailComponent from '../components/CardDetailComponent'
-import { getProductsById } from '../utils/asyncProducts'
+import { getProductsById } from '../api/apiProducts'
 
 
 
@@ -23,7 +23,7 @@ useEffect(() => {
   fillProduct()
 
 
-},[product])
+},[])
 
 
   return (
